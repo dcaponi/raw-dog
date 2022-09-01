@@ -92,8 +92,7 @@ dependencies = [
 [[package]]
 name = "esp-hal-common"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "143122333f2b9575cc78020c00e65e3690de2e9545d7f2c9b04f97fb31156138"
+source = "git+https://github.com/esp-rs/esp-hal.git#e9f22aca634a4ac107ac792297f00148e79cd616"
 dependencies = [
  "cfg-if",
  "critical-section",
@@ -105,14 +104,14 @@ dependencies = [
  "paste",
  "riscv 0.8.0",
  "riscv-atomic-emulation-trap",
+ "ufmt-write",
  "void",
 ]
 
 [[package]]
 name = "esp-hal-procmacros"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7dd1fb5018ef2c57daadf84e9bbff1c9e48c04958d32bc1469f781a96ec82e8e"
+source = "git+https://github.com/esp-rs/esp-hal.git#e9f22aca634a4ac107ac792297f00148e79cd616"
 dependencies = [
  "darling",
  "proc-macro-error",
@@ -136,8 +135,7 @@ dependencies = [
 [[package]]
 name = "esp32c3-hal"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "36da9c1c78d274d1d0240698282ee9ad4a71ff01e3440dfc496a7231b9ecc7e3"
+source = "git+https://github.com/esp-rs/esp-hal.git#e9f22aca634a4ac107ac792297f00148e79cd616"
 dependencies = [
  "embedded-hal 0.2.7",
  "embedded-hal 1.0.0-alpha.8",
@@ -203,6 +201,12 @@ name = "nb"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "546c37ac5d9e56f55e73b677106873d9d9f5190605e41a856503623648488cae"
+
+[[package]]
+name = "panic-halt"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de96540e0ebde571dc55c73d60ef407c653844e6f9a1e2fdbd40c07b9252d812"
 
 [[package]]
 name = "paste"
@@ -305,6 +309,7 @@ name = "raw-dog"
 version = "0.1.0"
 dependencies = [
  "esp32c3-hal",
+ "panic-halt",
  "riscv-rt 0.8.1",
 ]
 
@@ -442,6 +447,12 @@ dependencies = [
  "quote 1.0.21",
  "unicode-ident",
 ]
+
+[[package]]
+name = "ufmt-write"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e87a2ed6b42ec5e28cc3b94c09982969e9227600b2e3dcbc1db927a84c06bd69"
 
 [[package]]
 name = "unicode-ident"
