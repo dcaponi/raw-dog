@@ -18,12 +18,7 @@ use esp32c3_hal::{
 };
 // use esp_backtrace as _;
 use riscv_rt::entry;
-use core::panic::PanicInfo;
-
-#[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
-    loop {}
-}
+use panic_halt as _;
 
 #[entry]
 fn main() -> ! {
