@@ -12,6 +12,7 @@ use esp32c3_hal::{
     pac::Peripherals,
     prelude::*,
     system::SystemExt,
+    timer::TimerGroup,
     Delay,
     Rtc,
 };
@@ -27,7 +28,11 @@ fn main() -> ! {
 
     // Disable the watchdog timers. For the ESP32-C3, this includes the Super WDT and the RTC WDT.
     let mut rtc = Rtc::new(peripherals.RTC_CNTL);
+    let mut timer0 = TimerGroup::new(peripherals.TIMG0, &clocks);
+    let mut timer1 = TimerGroup::new(peripherals.TIMG1, &clocks);
 
+    timer0.wdt.disable();
+    timer1.wdt.disable();
     rtc.swd.disable();
     rtc.rwdt.disable();
 
